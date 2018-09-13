@@ -28,3 +28,9 @@ first() 、 time() 、 interval() 、 merge() 、 concat()
 	list.unsubscribe();
 
 7. Retrfit动态修改超时时间？
+
+# Android 8.0新特性
+
+## Android o的通知栏，自定义通知栏可以直接设置属性
+	NotificationChannel是Android O新增的特性，为了兼容老代码，如果channelId为null的话，Android O会把通知归到“Other Channel”上。
+	PS：将targetSdkVersion提到26以上的话，就必须设置channel了，不能为null。
