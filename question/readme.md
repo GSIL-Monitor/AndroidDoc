@@ -26,3 +26,5 @@ first() 、 time() 、 interval() 、 merge() 、 concat()
 	list.add(subscription3);
 	// 统一调用一次unsubscribe，就可以把所有的订阅都取消
 	list.unsubscribe();
+
+7. Retrfit动态修改超时时间？
