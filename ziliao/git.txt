@@ -1,0 +1,12 @@
+github提交代码
+1. 生成ssh-key
+	创建了github个人账户后，会在配置信息里面，有教你如何使用在本地生成key，最后cat复制到你的账户上去即可
+
+2. 创建github工程，克隆并提交
+	git clone 项目链接
+	本地创建你的代码库
+	git remote add 本地文件/目录  远程链接
+	git commit -m "注释"  或者 -a进入终端界面写详细
+	git push 本地代码库  远程链接  （搞定）
+
+如果提交过程中提示你没有 access right key，一般都是你的ssh key不对

@@ -1,0 +1,14 @@
+1. 用法:
+	1. new ListView 或者在 XML里面直接定义
+	2. 设置数据，就是我们要显示到ListView里面的内容；
+		--》》a. 数据一般用map结构体保存或者自定义一个类，用List来保存
+			  b. 自定义一个Adapter或者使用已经提供的SimpleAdapter适配器
+			  c. 重写Adapter的方法，主要有getItem,getView,getCount和getItemId这四个方法，方法内部就如实实现你有多少个显示viewItem  返回view之类的;这里面的view一般需要你自己定义显示格式，用inflater动态加载进来
+			  d. 将这个Adapter设置到你的ListView上去即可
+			
+	3. 设置监听，就是我们在ListView上面点击、长按时的反应
+	setOnItemClickListener完成
+	
+细节note：
+	1. 去掉ListView每个item之间的横线；
+		通过Java代码listview.setDividerHeight(0)高度为0 即可；  xml里面也提供了这个接口的，但是好像没用，推荐用jvav代码

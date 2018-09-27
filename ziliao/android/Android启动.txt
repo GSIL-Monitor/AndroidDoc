@@ -1,0 +1,28 @@
+Android启动目录：
+
+	1. 先谈五层框架，从上到下：
+		app层 --> app Framework层 --> c库media/openGL库和java运行时环境 --> linux内核
+
+	Linux启动流程：
+		1. Linux内核启动
+			1. init进程启动，Linux的其他所有进程都是由init进程fork出去的
+			2. init进程fork出zygote进程，zygote进程是所有java进程的父进程，所有java的进程都是有该进程启动而来的
+				断点：
+					ActivityManagerService（AMS）管理所有的Activity
+					ActivityThread 应用程序的主线程，根据AMS的要求去调度执行Activity/Service/BoardCast等
+					ApplicationThread 属于ActivityThread的内部类，ActivityThread通过它与AMS进行信息交互，而ApplicationThread					通过IBinder与AMS进行交互
+					Instrumentation 工具类，对Activity的生命周期方法的执行均由它完成
+					一个进程 --  ApplicationThread --- AactivityThread -- 对应所有的Activity
+				keep going
+
+			3. zygote初始化时，fork出System Server进程，该进程地位和zygote进程相等，负责创建AMS/WindowManager和PackageManagerServer
+			4. System Server进程完成初始化，创建各种服务后就会开启系统的launchMode完成界面加载
+				断点：
+					Context 全局类接口，可以很方便使用系统的资源；浮标/Toast最好使用ApplicationContext，使用Activity的易造成					内存泄露，因为在Activity中显示浮标时，如果此时销毁Activity，而浮标还拥有activity的一份引用，就会导致Acti					vity占用的内存得不到释放
+					classLoader : Boorstap / Extension / Application ClassLoader; 类加载模式使用的是双亲委派加载模式，每个加					载器出了Boorstap外都需要一个父类的集成器，在加载类的时候会先用父类去加载，父类加载不了再去使用子类加载，					最终保证内存中加载的类只有一份。
+					
+
+			5. 启动android APP
+				点击屏幕，两层屏幕产生电压，通过底层驱动获取点击的xy坐标，进而传给系统-->app-->app lanucher
+			6. android系统完成初始化后以及创建各种服务后，会启动Launcher这个应用进程，它会把其他的App icon布局找自己的xml布局文件中				去，最后党我们点击某个具体的icon时，launcher就会使用startactivity（底层会调用startActivityForResult）去去启动这个应用
+			

@@ -1,0 +1,25 @@
+截屏：
+	adb shell /system/bin/screencap -p /sdcard/screen.png
+取出文件：
+	adb pull /sdcard/screen.png ./
+
+adb shell am用法：
+	利用此命令可以从控制台启动activity  service 发送broadcast等
+	adb shell am broadcast -a android.intent.action.BATTERY_CHANGED --ei "level" 3 --ei "scale" 100  //-a=action --ei key-value
+	具体用法敲adb shell am 会提示用法
+
+jdb调试apk：
+	前提得android的manifest文件的application里面的调试模式打开（android：debuggable="true"）,然后就可以对该apk进行调试了
+	jdb代码级调试原理：
+		利用jdwp无线调试协议，传输jdb的调试命令和获取JVM的调试信息，在客户端和服务器之间的传输协议；完成调试的三个东西，被调试的JVM/服务端和桌面的客户端（桌面服务端用于显示调试信息）;
+	调试步骤:
+		1. 使用adb jdwp显示当前要调试apk的进程号(adb shell ps列出调试的进城号)
+		2. adb forward tcp:xxx jdwp:pid  //将本地端口和远程终端的端口连接在一起，这两个端口进行数据通宵
+		3. jdb -attach locahost:xxx      //将jdb绑定到制定的端口上去，这样就可以进行调试了
+
+
+
+
+参考链接：
+	http://bobao.360.cn/learning/detail/140.html
+	http://www.cnblogs.com/fanzhidongyzby/archive/2013/08/10/3250405.html		//栈溢出攻击原理
