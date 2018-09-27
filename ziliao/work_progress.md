@@ -41,7 +41,10 @@
 
 [android的VPNService理解][21]
 
-[android逆向反调试技能]
+[android逆向反调试技能][22]
+
+[android性能优化-电量优化][23]
+[android性能优化][24]
 
 [1]:https://mp.weixin.qq.com/s?__biz=MzI2OTQxMTM4OQ==&mid=2247485000&idx=1&sn=2d74c597c62c9c4229f79cce9587b6bf&chksm=eae1f31add967a0cddf98dd3bbf529b50420bbf7a9cb6b238e6e6fe993c8bd8ba5cca728e0da#rd
 [2]:https://yq.aliyun.com/articles/71687
@@ -65,3 +68,5 @@
 [20]:http://blog.csdn.net/qq1084283172/article/details/69665905
 [21]:http://blog.csdn.net/roland_sun/article/details/46337171
 [22]:http://www.evil0x.com/posts/26301.html
+[23]:https://blog.csdn.net/liuwei187/article/details/78958363
+[24]:https://www.cnblogs.com/cr330326/p/8011523.html
