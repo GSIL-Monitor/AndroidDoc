@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ElfType</string>
+    <string name="shangbang">上打卡</string>
+    <string name="xiadaka">下打卡</string>
+    <string name="login_error">登录失败</string>
+    <string name="kaerror">打卡失败</string>
+</resources>

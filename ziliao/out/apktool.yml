@@ -1,0 +1,25 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: zhuanke_v3.0_from1.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '8'
+  targetSdkVersion: '22'
+sharedLibrary: false
+unknownFiles:
+  miui_push_version: '8'
+  push_version: '8'
+  org/apache/http/entity/mime/version.properties: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.2.2
+versionInfo:
+  versionCode: '30'
+  versionName: '3.0'
